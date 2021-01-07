@@ -1,0 +1,32 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: config-client3355
+  cloud:
+    config:
+      label: main # 分支名
+      name: config # 配置文件名
+      profile: dev #读取文件后缀 上述三个综合：分支名/配置文件名-读取文件后缀
+      uri: http://localhost:3344/ # 配置中心细致
+
+  rabbitmq:
+    host: 39.96.71.220
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+  instance:
+    prefer-ip-address: true
+    instance-id: ConfigClinet3355
+
+#暴露监控断点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

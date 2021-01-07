@@ -1,0 +1,17 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-payment
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+        prefer-ip-address: true
+        register-health-check: false
+      host: 39.96.71.220
+      port: 8500
+
+
+
+
